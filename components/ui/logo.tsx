@@ -4,8 +4,8 @@ export default function Logo() {
   return (
     <Image
       src="/static/images/logo.png"
-      width={100}
-      height={35}
+      width={125}
+      height={50}
       alt="Ready Chef logo"
     />
   );

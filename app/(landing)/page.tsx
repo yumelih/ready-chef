@@ -1,9 +1,11 @@
 import Header from "@/components/(landing)/Header";
+import Navbar from "@/components/shared/navbar";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="">
+      <Navbar />
       <Header />
     </main>
   );
