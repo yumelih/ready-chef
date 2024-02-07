@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="bg-lingr-withImg flex items-start lg:items-center">
-      <div className="grid grid-rows-2 lg:grid-rows-none lg:grid-cols-2 gap-0 lg:gap-12 justify-center items-center lg:justify-center lg:items-stretch max-w-[100rem] mx-auto  px-4 lg:p-14">
+      <div className="grid grid-rows-2 lg:grid-rows-none lg:grid-cols-2 gap-0 lg:gap-12 justify-center items-center lg:justify-center lg:items-stretch max-w-[100rem] mx-auto px-4 lg:p-14">
         <div className="text-white flex flex-col justify-between items-center lg:items-start gap-4 max-w-[40rem] lg:max-w-fit lg:gap-4">
           <h1 className="text-5xl lg:text-7xl">Enjoy Our Delicous Meal</h1>
           <p className="text-xl lg:text-2xl">
