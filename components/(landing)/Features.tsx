@@ -37,10 +37,10 @@ const features: feature[] = [
 
 export default function Features() {
   return (
-    <section className="grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] justify-items-center gap-8 px-32 py-20">
+    <section className=" col-span-1 col-start-2 grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] items-center justify-items-center gap-8">
       {features.map((elm) => {
         const icon = cloneElement(elm.icon, {
-          className: "text-yellow-600 w-20 h-20",
+          className: "text-orange-600 w-20 h-20",
         });
         return (
           <div
