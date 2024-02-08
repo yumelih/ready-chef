@@ -1,14 +1,15 @@
 import { CakeIcon } from "@heroicons/react/20/solid";
 import { Kaushan_Script } from "next/font/google";
 import Image from "next/image";
+import GridAutoFit from "../ui/gridautofit";
 
 const kaushan = Kaushan_Script({ subsets: ["latin"], weight: ["400"] });
 
 export default function AboutUs() {
   return (
-    <section className="col-span-1 col-start-2 grid h-fit grid-cols-[repeat(auto-fit,minmax(25rem,1fr))] items-center justify-items-end gap-12 ">
+    <GridAutoFit className="col-span-1 col-start-2">
       <div className="mx-auto grid grid-cols-[minmax(0,20rem),minmax(0,20rem)] grid-rows-2 justify-items-center gap-6">
-        <div className="relative aspect-[10/8] h-fit w-full translate-y-12 ">
+        <div className="relative aspect-[10/8] h-fit w-full translate-y-6 ">
           <Image src="/static/images/food-1.jpg" fill={true} alt="food" />
         </div>
         <div className="relative aspect-[9/8] h-auto w-full max-w-full ">
@@ -17,7 +18,7 @@ export default function AboutUs() {
         <div className="relative aspect-[9/9] h-auto w-full max-w-full ">
           <Image src="/static/images/food-3.jpg" fill={true} alt="food" />
         </div>
-        <div className="relative aspect-square h-auto w-full max-w-full -translate-y-12 ">
+        <div className="relative aspect-square h-auto w-full max-w-full -translate-y-6 ">
           <Image src="/static/images/food-4.jpg" fill={true} alt="food" />
         </div>
       </div>
@@ -50,6 +51,6 @@ export default function AboutUs() {
           Hire a Chef
         </button>
       </div>
-    </section>
+    </GridAutoFit>
   );
 }

@@ -5,6 +5,7 @@ import {
   GiftIcon,
 } from "@heroicons/react/20/solid";
 import React, { cloneElement } from "react";
+import GridAutoFit from "../ui/gridautofit";
 
 interface feature {
   icon: React.ReactElement;
@@ -37,7 +38,7 @@ const features: feature[] = [
 
 export default function Features() {
   return (
-    <section className=" col-span-1 col-start-2 grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] items-center justify-items-center gap-8">
+    <GridAutoFit className="col-span-1 col-start-2 gap-8">
       {features.map((elm) => {
         const icon = cloneElement(elm.icon, {
           className: "text-orange-600 w-20 h-20",
@@ -53,6 +54,6 @@ export default function Features() {
           </div>
         );
       })}
-    </section>
+    </GridAutoFit>
   );
 }

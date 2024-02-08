@@ -11,7 +11,7 @@ const navItems: string[] = [
 
 export default function Navbar() {
   return (
-    <nav className="col-span-full flex w-full items-center justify-between bg-slate-900 p-8 text-white ">
+    <nav className="flex w-full items-center justify-between bg-slate-900 p-8 text-white ">
       <Logo />
       <ul className="flex items-center justify-start gap-8 text-lg font-semibold uppercase">
         {navItems.map((item) => {
