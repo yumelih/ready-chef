@@ -2,6 +2,7 @@ import { CakeIcon } from "@heroicons/react/20/solid";
 import { Kaushan_Script } from "next/font/google";
 import Image from "next/image";
 import GridAutoFit from "../ui/gridautofit";
+import StyledText from "../ui/styled-text";
 
 const kaushan = Kaushan_Script({ subsets: ["latin"], weight: ["400"] });
 
@@ -24,10 +25,7 @@ export default function AboutUs() {
       </div>
       <div className="space-y-6">
         <div>
-          <div className="flex items-center gap-4">
-            <h2 className={`${kaushan.className} text-2xl`}>about Us</h2>
-            <div className="h-1 w-24 bg-orange-600" />
-          </div>
+          <StyledText text="about Us" isDoubleLines={false} />
           <h1 className="flex items-end gap-2 text-4xl font-bold">
             Welcome to <CakeIcon className="h-12 w-12 text-orange-600" /> Ready
             Chef

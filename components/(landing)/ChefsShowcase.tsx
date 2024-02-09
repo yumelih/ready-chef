@@ -1,6 +1,7 @@
 import { Kaushan_Script } from "next/font/google";
 import GridAutoFit from "../ui/gridautofit";
 import Image from "next/image";
+import StyledText from "../ui/styled-text";
 
 const kaushan = Kaushan_Script({ subsets: ["latin"], weight: ["400"] });
 
@@ -63,13 +64,7 @@ export default function ChefsShowcase() {
   return (
     <div className="col-span-1 col-start-2 flex flex-col items-center gap-8">
       <div className="flex flex-col items-center gap-4">
-        <div className="flex items-center gap-4">
-          <div className="h-1 w-24 bg-orange-600" />
-          <h2 className={`${kaushan.className} text-2xl text-orange-600`}>
-            Chef Roster
-          </h2>
-          <div className="h-1 w-24 bg-orange-600" />
-        </div>
+        <StyledText text="Chef Roster" />
         <h1 className="text-4xl font-bold">Master Chefs</h1>
       </div>
       <GridAutoFit className="w-full items-start">

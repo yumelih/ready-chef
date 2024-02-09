@@ -1,15 +1,21 @@
 export default function GridAutoFit({
   children,
-  className,
+  className = "",
+  alignment = " items-center justify-items-center ",
+  gridWidths = ["20rem", "1fr"],
 }: {
   children: React.ReactNode;
   className?: string;
+  alignment?: string;
+  gridWidths?: string[];
 }) {
   return (
     <div
       className={
-        "grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] items-center justify-items-center gap-8 " +
-        className
+        `grid grid-cols-[repeat(auto-fit,minmax(${gridWidths.join(",")}))] gap-8 ` +
+        className +
+        " " +
+        alignment
       }
     >
       {children}
