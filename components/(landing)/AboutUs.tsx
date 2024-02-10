@@ -3,6 +3,7 @@ import { Kaushan_Script } from "next/font/google";
 import Image from "next/image";
 import GridAutoFit from "../ui/gridautofit";
 import StyledText from "../ui/styled-text";
+import { Button } from "../ui/button";
 
 const kaushan = Kaushan_Script({ subsets: ["latin"], weight: ["400"] });
 
@@ -45,9 +46,7 @@ export default function AboutUs() {
           <p className="text-lg font-bold">Popular</p>
           <h3>Master Chefs</h3>
         </div>
-        <button className="rounded-sm bg-yellow-600 px-8 py-2 text-xl uppercase text-white lg:px-12 lg:py-4 lg:text-2xl">
-          Hire a Chef
-        </button>
+        <Button className="uppercase">Hire A Chef</Button>
       </div>
     </GridAutoFit>
   );

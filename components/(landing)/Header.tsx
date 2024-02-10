@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 export default function Header() {
   return (
@@ -11,9 +12,10 @@ export default function Header() {
             diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
             lorem sit clita duo justo magna dolore erat amet
           </p>
-          <button className="rounded-sm bg-yellow-600 px-8 py-2 text-xl uppercase lg:px-12 lg:py-4 lg:text-2xl">
+          {/* <button className="rounded-sm bg-yellow-600 px-8 py-2 text-xl uppercase lg:px-12 lg:py-4 lg:text-2xl">
             Hire a Chef
-          </button>
+          </button> */}
+          <Button>Hire a Chef</Button>
         </div>
         <div className="relative mx-auto h-80 w-[32rem] lg:aspect-video lg:h-full lg:w-full">
           <Image

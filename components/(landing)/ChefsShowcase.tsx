@@ -2,6 +2,7 @@ import { Kaushan_Script } from "next/font/google";
 import GridAutoFit from "../ui/gridautofit";
 import Image from "next/image";
 import StyledText from "../ui/styled-text";
+import { Button } from "../ui/button";
 
 const kaushan = Kaushan_Script({ subsets: ["latin"], weight: ["400"] });
 
@@ -53,9 +54,12 @@ function ChefContainer({
           <h3 className="text-base">{chefDesc}</h3>
         </div>
       </div>
-      <button className="gr h-0 w-full cursor-pointer bg-yellow-600 px-4 py-2 opacity-0 transition-all hover:text-white group-hover:h-fit group-hover:opacity-100">
+      {/* <button className="gr h-0 w-full cursor-pointer bg-yellow-600 px-4 py-2 opacity-0 transition-all hover:text-white group-hover:h-fit group-hover:opacity-100">
         HIRE NOW
-      </button>
+      </button> */}
+      <Button variant="full" size="full">
+        Hire Now
+      </Button>
     </div>
   );
 }

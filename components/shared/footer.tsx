@@ -7,6 +7,7 @@ import {
 import GridAutoFit from "../ui/gridautofit";
 import StyledText from "../ui/styled-text";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 function Company() {
   return (
@@ -62,9 +63,9 @@ function Contact() {
 
 function JoinUs() {
   return (
-    <div className="flex max-w-52 flex-col gap-2">
+    <div className="flex max-w-52 flex-col justify-center gap-2">
       <StyledText text="Join Us" isDoubleLines={false} />
-      <ul className="space-y-2">
+      <ul className="flex flex-col justify-end space-y-4">
         <li className="">
           If you are chef looking for work please &nbsp;
           <Link
@@ -75,7 +76,9 @@ function JoinUs() {
           </Link>
         </li>
 
-        <li className="flex items-center gap-2"></li>
+        <li className="flex justify-center">
+          <Button size="sm">Join To Hire a Chef</Button>
+        </li>
       </ul>
     </div>
   );
@@ -84,10 +87,7 @@ function JoinUs() {
 export default function Footer() {
   return (
     <footer className="col-span-full bg-blue-950 pb-8 pt-12 text-white">
-      <GridAutoFit
-        alignment="justify-items-center"
-        gridWidths={["20rem", "1fr"]}
-      >
+      <GridAutoFit alignment="justify-items-center">
         <Company />
         <Contact />
         <JoinUs />
