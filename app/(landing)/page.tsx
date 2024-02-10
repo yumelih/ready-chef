@@ -2,6 +2,7 @@ import AboutUs from "@/components/(landing)/AboutUs";
 import ChefsShowcase from "@/components/(landing)/ChefsShowcase";
 import Features from "@/components/(landing)/Features";
 import Header from "@/components/(landing)/Header";
+import Stories from "@/components/(landing)/Stories";
 import Footer from "@/components/shared/footer";
 import Navbar from "@/components/shared/navbar";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <Features />
       <AboutUs />
       <ChefsShowcase />
+      <Stories />
       <Footer />
     </main>
   );

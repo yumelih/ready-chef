@@ -86,13 +86,21 @@ function JoinUs() {
 
 export default function Footer() {
   return (
-    <footer className="col-span-full bg-blue-950 pb-8 pt-12 text-white">
+    <footer className="col-span-full bg-blue-950 pb-4 pt-12 text-white">
       <GridAutoFit alignment="justify-items-center">
         <Company />
         <Contact />
         <JoinUs />
       </GridAutoFit>
-      <div></div>
+      <div className="mt-12 flex w-full flex-col items-center justify-between gap-2 border-t-2 px-24 pt-4 lg:flex-row lg:gap-0">
+        <p>© Your Site Name, All Rights Reserved. Designed By HTML Codex</p>
+        <ul className="flex gap-2 divide-x-2 [&_li]:pl-4">
+          <li>Home</li>
+          <li>Cookies</li>
+          <li>Help</li>
+          <li>FAQs</li>
+        </ul>
+      </div>
     </footer>
   );
 }
