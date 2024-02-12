@@ -1,9 +1,14 @@
 import { FaceSmileIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 
-function Story() {
+function Story({ className }: { className?: string }) {
   return (
-    <div className="group flex w-3/5 cursor-pointer flex-col items-start gap-2 hyphens-auto rounded-sm bg-white  p-6 text-gray-800 hover:bg-orange-500 hover:text-gray-100">
+    <div
+      className={
+        "group relative flex min-w-80 max-w-[30rem] cursor-pointer flex-col items-start gap-2  hyphens-auto rounded-sm bg-white p-6 text-gray-800 hover:bg-orange-500 hover:text-gray-100 " +
+        className
+      }
+    >
       <FaceSmileIcon className="w-12 text-orange-500 group-hover:text-white" />
       <p className="px-2">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget
@@ -26,14 +31,18 @@ function Story() {
           <p className="mt-auto">Profession</p>
         </div>
       </div>
+      {/* <div className="absolute left-0 top-0 z-10 h-full w-1/2 bg-gray-100" /> */}
     </div>
   );
 }
 
 export default function Stories() {
   return (
-    <section className="col-span-1 col-start-2">
-      <Story />
+    <section className="col-span-full mx-auto flex max-w-80 justify-center gap-8 overflow-hidden lg:max-w-[calc(100%-20rem)]">
+      <Story className="" />
+      <Story className="" />
+      <Story className="" />
+      {/* <Story /> */}
     </section>
   );
 }
