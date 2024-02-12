@@ -1,5 +1,7 @@
 import { FaceSmileIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
+import { reviews } from "@/lib/data/data";
+import StyledText from "../ui/styled-text";
 
 function Story({ className }: { className?: string }) {
   return (
@@ -20,7 +22,7 @@ function Story({ className }: { className?: string }) {
       </p>
       <div className="flex justify-start gap-2">
         <Image
-          src="/static/images/user.jpg"
+          src="/static/images/user4.jpg"
           width="55"
           height="55"
           alt="User"
@@ -38,10 +40,18 @@ function Story({ className }: { className?: string }) {
 
 export default function Stories() {
   return (
-    <section className="col-span-full mx-auto flex max-w-80 justify-center gap-8 overflow-hidden lg:max-w-[calc(100%-20rem)]">
-      <Story className="" />
-      <Story className="" />
-      <Story className="" />
+    <section className="col-span-full flex flex-col items-center gap-6">
+      <div className="text-center">
+        <StyledText text="Testinomial" />
+        <h1 className=" text-4xl font-bold tracking-wide">
+          Our Clients Say!!!
+        </h1>
+      </div>
+      <div className="mx-auto flex max-w-80 justify-center gap-8 overflow-hidden lg:max-w-[calc(100%-20rem)]">
+        <Story className="" />
+        <Story className="" />
+        <Story className="" />
+      </div>
       {/* <Story /> */}
     </section>
   );
