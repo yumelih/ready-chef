@@ -93,7 +93,7 @@ export default function Footer() {
         <JoinUs />
       </GridAutoFit>
       <div className="mt-12 flex w-full flex-col items-center justify-between gap-2 border-t-2 px-24 pt-4 lg:flex-row lg:gap-0">
-        <p>© Your Site Name, All Rights Reserved. Designed By HTML Codex</p>
+        <p>© Ready Chef, All Rights Reserved. Designed By Yumelih</p>
         <ul className="flex gap-2 divide-x-2 [&_li]:pl-4">
           <li>Home</li>
           <li>Cookies</li>

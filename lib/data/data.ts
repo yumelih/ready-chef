@@ -1,4 +1,4 @@
-interface ReviewType {
+export interface ReviewType {
   id: number;
   review: string;
   avatar: string;
@@ -12,31 +12,31 @@ export const reviews: ReviewType[] = [
     review:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lectus a ipsum ultricies suscipit. Aliquam erat volutpat. Nunc vehicula tempor lacus, ut dapibus diam mollis et.",
     avatar: "user1.jpg",
-    name: "Ahmed the Chad",
+    name: "Ahmed the Weak",
     job: "Connoisseur of fine goods",
   },
   {
     id: 2,
     review:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lectus a ipsum ultricies suscipit. Aliquam erat volutpat. Nunc vehicula tempor lacus, ut dapibus diam mollis et.",
-    avatar: "user1.jpg",
-    name: "Ahmed the Chad",
+    avatar: "user2.jpg",
+    name: "Yusuf the Chad",
     job: "Connoisseur of fine goods",
   },
   {
     id: 3,
     review:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lectus a ipsum ultricies suscipit. Aliquam erat volutpat. Nunc vehicula tempor lacus, ut dapibus diam mollis et.",
-    avatar: "user1.jpg",
-    name: "Ahmed the Chad",
+    avatar: "user3.jpg",
+    name: "Furkan the Feeble",
     job: "Connoisseur of fine goods",
   },
   {
     id: 4,
     review:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lectus a ipsum ultricies suscipit. Aliquam erat volutpat. Nunc vehicula tempor lacus, ut dapibus diam mollis et.",
-    avatar: "user1.jpg",
-    name: "Ahmed the Chad",
+    avatar: "user4.jpg",
+    name: "Mysterious Jon Doe",
     job: "Connoisseur of fine goods",
   },
 ];
