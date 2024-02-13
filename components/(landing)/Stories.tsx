@@ -7,32 +7,6 @@ import StyledText from "../ui/styled-text";
 import { useState } from "react";
 import Slider from "../ui/slider";
 
-function SliderDots({
-  numDots,
-  activeNum,
-  onClick,
-}: {
-  numDots: number;
-  activeNum: number;
-  onClick: (activeIndex: number) => void;
-}) {
-  function handleClick() {}
-
-  return (
-    <div className="dots flex gap-2">
-      {[...Array(numDots)].map((_, i) => {
-        return (
-          <div
-            key={i}
-            className={`h-4 w-4 rounded-full border-2 ${activeNum === i && "bg-orange-600"}`}
-            onClick={() => onClick(i)}
-          />
-        );
-      })}
-    </div>
-  );
-}
-
 function Story({
   className,
   review,
@@ -87,11 +61,6 @@ export default function Stories() {
           Our Clients Say!!!
         </h1>
       </div>
-      {/* <div className="mx-auto flex max-w-80 justify-center gap-8 overflow-hidden lg:max-w-[calc(100%-20rem)]">
-        {reviews.map((review, i) => {
-          return <Story key={review.id} className="" review={review} />;
-        })}
-      </div> */}
       <Slider options={{ align: "end" }}>
         {reviews.map((review, i) => {
           return (
@@ -101,8 +70,6 @@ export default function Stories() {
           );
         })}
       </Slider>
-      {/* <Story /> */}
-      <SliderDots numDots={4} activeNum={currentPost} onClick={handleClick} />
     </section>
   );
 }
