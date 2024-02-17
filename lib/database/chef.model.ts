@@ -16,6 +16,9 @@ const ChefSchema = new Schema({
     type: String,
     required: true,
   },
+  desc: {
+    type: String,
+  },
   email: {
     type: String,
     validate: {
@@ -38,7 +41,7 @@ const ChefSchema = new Schema({
     },
     select: false,
   },
-  experience: String,
+  experienceYear: Number,
   ratingsAverage: {
     type: Number,
     min: 1,
@@ -53,12 +56,26 @@ const ChefSchema = new Schema({
     type: Boolean,
     default: true,
   },
-  tags: {
-    type: [String],
+  speciality: {
+    type: String,
   },
   joinedIn: {
     type: Date,
     default: Date.now(),
+  },
+  chefLocation: {
+    type: {
+      type: String,
+      default: "Point",
+      enum: ["Point"],
+    },
+    coordinates: [Number],
+  },
+  signutareDish: {
+    type: String,
+  },
+  photo: {
+    type: String,
   },
 });
 
