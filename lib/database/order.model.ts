@@ -16,6 +16,7 @@ const OrderSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  requestDescription: String,
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",

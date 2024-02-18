@@ -25,7 +25,8 @@ const ChefSchema = new Schema({
       validator: function (val: string) {
         return isEmail(val);
       },
-      message: (props: { value: any }) => `${props.value} is not a valid email`,
+      message: (props: { value: string }) =>
+        `${props.value} is not a valid email!`,
     },
     select: false,
   },
@@ -37,7 +38,7 @@ const ChefSchema = new Schema({
         isMobilePhone(val);
       },
       message: (props: { value: any }) =>
-        `${props.value} is not a valid phone number`,
+        `${props.value} is not a valid phone number!`,
     },
     select: false,
   },
