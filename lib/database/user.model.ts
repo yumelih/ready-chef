@@ -18,6 +18,7 @@ const UserSchema = new Schema({
         `${props.value} is not a valid email!`,
     },
   },
+  photo: String,
   phoneNumber: {
     type: String,
     validate: {
@@ -43,6 +44,19 @@ const UserSchema = new Schema({
       },
       message: "Passwords are not the same!",
     },
+  },
+  role: {
+    type: String,
+    enum: ["chef", "user", "admin"],
+    required: [true, "A role value is required"],
+  },
+  passwordChangedAt: Date,
+  passwordResetToken: String,
+  passwordResetExpires: Date,
+  active: {
+    type: Boolean,
+    default: true,
+    select: false,
   },
 });
 
