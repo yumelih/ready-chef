@@ -1,8 +1,21 @@
 import Chef from "../lib/database/chef.model";
 import { connectToDB } from "../lib/database/mongoose";
 import { locations } from "./data";
+import fs from "fs";
 
+const chefData = JSON.parse(
+  fs.readFileSync(`${__dirname}/chef-data.json`, "utf-8"),
+);
 connectToDB();
+
+const importChefData = async function () {
+  try {
+    await Chef.create(chefData);
+    await updateLocationsChefs();
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 const updateLocationsChefs = async () => {
   try {
@@ -18,6 +31,20 @@ const updateLocationsChefs = async () => {
   process.exit();
 };
 
-if (process.argv[2] === "--import-locations") {
-  updateLocationsChefs();
+const deleteAllChefs = async () => {
+  try {
+    await Chef.deleteMany();
+  } catch (err) {
+    console.log(err);
+  }
+
+  process.exit();
+};
+
+if (process.argv[2] === "--import") {
+  importChefData();
+}
+
+if (process.argv[2] === "--delete") {
+  deleteAllChefs();
 }

@@ -4,13 +4,6 @@ import { Schema, model, models } from "mongoose";
 import isEmail from "validator/lib/isEmail";
 import isMobilePhone from "validator/lib/isMobilePhone";
 
-export interface ChefType {
-  name: string;
-  email: string;
-  phoneNumber: string;
-  experience: string;
-}
-
 const ChefSchema = new Schema({
   name: {
     type: String,
@@ -71,6 +64,7 @@ const ChefSchema = new Schema({
       enum: ["Point"],
     },
     coordinates: [Number],
+    // select: false,
   },
   signutareDish: {
     type: String,
@@ -78,6 +72,8 @@ const ChefSchema = new Schema({
   photo: {
     type: String,
   },
+  imageCover: String,
+  images: [String],
 });
 
 const Chef = models.Chef || model("Chef", ChefSchema);
