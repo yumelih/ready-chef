@@ -26,7 +26,7 @@ export default function Slider({ children, options }: Props) {
   return (
     <div ref={emblaRef}>
       <div className="flex gap-10">{children}</div>
-      <div className="mt-2 flex w-full justify-center lg:justify-between">
+      <div className="mt-2 flex w-full justify-center gap-2 lg:justify-between lg:gap-0">
         <button
           className="cursor-pointer rounded-sm bg-yellow-600 px-4 py-2 text-white hover:text-gray-900"
           onClick={scrollPrev}
