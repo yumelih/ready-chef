@@ -54,17 +54,19 @@ export default function Stories() {
   }
 
   return (
-    <section className="col-span-1 col-start-2 flex flex-col items-center gap-6">
-      <div className="text-center">
+    <section className="col-span-full flex flex-col items-center gap-6 overflow-hidden sm:col-span-1 sm:col-start-2">
+      <div className=" text-center">
         <StyledText text="Testinomial" />
-        <h1 className=" text-4xl font-bold tracking-wide">
-          Our Clients Say!!!
-        </h1>
+        <h1 className="text-4xl font-bold tracking-wide">Our Clients Say!!!</h1>
       </div>
-      <Slider options={{ align: "end" }}>
+      <Slider
+        options={{
+          breakpoints: { "(max-width: 1024px)": { containScroll: false } },
+        }}
+      >
         {reviews.map((review, i) => {
           return (
-            <div key={review.id} className="flex-[0_0_90%] lg:flex-[0_0_40%]">
+            <div key={review.id} className="flex-[0_0_50%] lg:flex-[0_0_40%]">
               <Story key={review.id} className="" review={review} />
             </div>
           );

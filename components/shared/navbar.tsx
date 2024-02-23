@@ -14,7 +14,7 @@ export default function Navbar() {
     <nav className="flex w-full items-center justify-between bg-slate-900 p-8 text-white ">
       <Logo />
       <ul className="flex items-center justify-start gap-8 text-lg font-semibold uppercase">
-        {navItems.map((item) => {
+        {/* {navItems.map((item) => {
           return (
             <li
               className="cursor-pointer transition-all duration-300 hover:tracking-widest  hover:text-gray-200"
@@ -23,7 +23,7 @@ export default function Navbar() {
               {item}
             </li>
           );
-        })}
+        })} */}
       </ul>
     </nav>
   );

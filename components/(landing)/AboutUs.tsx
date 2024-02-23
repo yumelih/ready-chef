@@ -11,7 +11,7 @@ export default function AboutUs() {
   return (
     <GridAutoFit className="col-span-1 col-start-2">
       <div className="mx-auto grid grid-cols-[minmax(0,20rem),minmax(0,20rem)] grid-rows-2 justify-items-center gap-6">
-        <div className="relative aspect-[10/8] h-fit w-full translate-y-6 ">
+        <div className="relative aspect-[10/8] h-auto w-full translate-y-6 ">
           <Image src="/static/images/food-1.jpg" fill={true} alt="food" />
         </div>
         <div className="relative aspect-[9/8] h-auto w-full max-w-full ">

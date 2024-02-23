@@ -8,7 +8,7 @@ import Navbar from "@/components/shared/navbar";
 
 export default function Home() {
   return (
-    <main className="grid grid-cols-[10rem,1fr,10rem] grid-rows-[repeat(6,min-content)] gap-y-40 bg-gray-100">
+    <main className="grid h-full w-full grid-cols-[minmax(min-content,10rem)_1fr_minmax(min-content,10rem)] grid-rows-[repeat(6,min-content)] gap-y-40 bg-gray-100">
       <div className="col-span-full grid grid-rows-[min-content_80vh]">
         <Navbar />
         <Header />

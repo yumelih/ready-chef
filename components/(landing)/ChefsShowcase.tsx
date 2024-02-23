@@ -40,7 +40,7 @@ function ChefContainer({
 }) {
   return (
     <div className="group">
-      <div className="flex cursor-pointer flex-col items-center justify-center gap-y-3 rounded-sm bg-white p-6 shadow-md transition-all">
+      <div className="flex cursor-pointer flex-col items-center justify-center gap-3 rounded-sm bg-white p-6 shadow-md transition-all">
         <div className="relative aspect-square w-72 ">
           <Image
             src={imageSrc}
