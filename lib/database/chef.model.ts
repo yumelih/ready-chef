@@ -3,8 +3,10 @@
 import { Schema, model, models } from "mongoose";
 import isEmail from "validator/lib/isEmail";
 import isMobilePhone from "validator/lib/isMobilePhone";
+import { getLocation } from "../utils/reverseGeocoding";
+import { ChefType } from "@/types/types";
 
-const ChefSchema = new Schema({
+const ChefSchema = new Schema<ChefType>({
   name: {
     type: String,
     required: true,
@@ -55,7 +57,7 @@ const ChefSchema = new Schema({
   },
   joinedIn: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
   chefLocation: {
     type: {
@@ -64,17 +66,29 @@ const ChefSchema = new Schema({
       enum: ["Point"],
     },
     coordinates: [Number],
+    address: String,
     // select: false,
   },
   signutareDish: {
     type: String,
   },
-  photo: {
+  profilePhoto: {
     type: String,
   },
   imageCover: String,
   images: [String],
 });
+
+// ChefSchema.pre("save", async function (next) {
+//   console.log(this.name);
+//   if (this.chefLocation && !this.chefLocation.address) {
+//     this.chefLocation.address = await getLocation(
+//       this.chefLocation.coordinates[1],
+//       this.chefLocation.coordinates[0],
+//     );
+//   }
+//   next();
+// });
 
 const Chef = models.Chef || model("Chef", ChefSchema);
 

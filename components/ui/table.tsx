@@ -1,23 +1,18 @@
+import { ChefType } from "@/types/types";
 import { Button } from "./button";
 import TableNameImage from "./table-name-image";
 import { Tag } from "./tag";
 
-const people = [
-  {
-    name: "Lindsay Walton",
-    title: "Front-end Developer",
-    department: "Optimization",
-    email: "lindsay.walton@example.com",
-    role: "Member",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-  // More people...
+const chefHeaders = [
+  "Name",
+  "City",
+  "Experience",
+  "Rating",
+  "Signature Dish",
+  "Looking for Work",
 ];
 
-const chefHeaders = ["name", "speciality", "chefLocation", "experienceYear"];
-
-function TableHeader({ children }: { children: React.ReactNode }) {
+async function TableHeader({ children }: { children: React.ReactNode }) {
   return (
     <th
       scope="col"
@@ -51,7 +46,7 @@ function TableElement({
   );
 }
 
-export default function Table() {
+export default function Table({ data }: { data: ChefType[] }) {
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
@@ -76,10 +71,9 @@ export default function Table() {
             <table className="min-w-full divide-y divide-gray-300">
               <thead>
                 <tr>
-                  <TableHeader>Name</TableHeader>
-                  <TableHeader>Name</TableHeader>
-                  <TableHeader>Name</TableHeader>
-                  <TableHeader>Name</TableHeader>
+                  {chefHeaders.map((elm) => {
+                    return <TableHeader key={elm}>{elm}</TableHeader>;
+                  })}
 
                   <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-0">
                     <span className="sr-only">Edit</span>
@@ -87,32 +81,33 @@ export default function Table() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {people.map((person) => (
-                  <tr key={person.email}>
+                {data.map((chef) => (
+                  <tr key={chef.name}>
                     <TableElement>
                       <TableNameImage
-                        imageSrc={person.image}
-                        name={person.name}
-                        speciality={person.email}
+                        imageSrc={chef.profilePhoto}
+                        name={chef.name}
+                        speciality={chef.speciality}
                       />
                     </TableElement>
                     <TableElement>
-                      <TableDoubleLines
-                        lineOne={person.title}
-                        lineTwo={person.department}
-                      />
+                      {chef.chefLocation.coordinates[1]}
+                    </TableElement>
+                    <TableElement>
+                      {chef.experienceYear}{" "}
+                      <span className=" font-semibold">years</span>
                     </TableElement>
 
                     <TableElement>
                       <Tag />
                     </TableElement>
-                    <TableElement>{person.role}</TableElement>
+                    <TableElement>{chef.role}</TableElement>
                     <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                       <a
                         href="#"
                         className="text-indigo-600 hover:text-indigo-900"
                       >
-                        Edit<span className="sr-only">, {person.name}</span>
+                        Edit<span className="sr-only">, {chef.name}</span>
                       </a>
                     </td>
                   </tr>

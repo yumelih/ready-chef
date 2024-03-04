@@ -11,6 +11,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "images.unsplash.com",
       },
+      {
+        protocol: "https",
+        hostname: "robohash.org",
+      },
+      {
+        protocol: "https",
+        hostname: "dummyimage.com",
+      },
     ],
   },
 };
