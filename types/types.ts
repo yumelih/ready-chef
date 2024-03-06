@@ -15,12 +15,12 @@ export interface ChefType {
     coordinates: number[];
     address: string | undefined;
   };
-  signutareDish: string;
+  signatureDish: string;
   profilePhoto: string;
   imageCover: string;
   images: string[];
 }
 
-export interface ChefTypeCity extends ChefType {
-  city: string;
-}
+// export interface ChefTypeCity extends ChefType {
+//   city: string;
+// }

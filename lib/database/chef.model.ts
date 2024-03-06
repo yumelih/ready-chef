@@ -69,7 +69,7 @@ const ChefSchema = new Schema<ChefType>({
     address: String,
     // select: false,
   },
-  signutareDish: {
+  signatureDish: {
     type: String,
   },
   profilePhoto: {

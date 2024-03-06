@@ -5,7 +5,7 @@ import { Tag } from "./tag";
 
 const chefHeaders = [
   "Name",
-  "City",
+  "Location",
   "Experience",
   "Rating",
   "Signature Dish",
@@ -90,18 +90,17 @@ export default function Table({ data }: { data: ChefType[] }) {
                         speciality={chef.speciality}
                       />
                     </TableElement>
-                    <TableElement>
-                      {chef.chefLocation.coordinates[1]}
-                    </TableElement>
+                    <TableElement>{chef.chefLocation.address}</TableElement>
                     <TableElement>
                       {chef.experienceYear}{" "}
                       <span className=" font-semibold">years</span>
                     </TableElement>
-
+                    <TableElement>{chef.ratingsAverage}</TableElement>
+                    <TableElement>{chef.signatureDish}</TableElement>
                     <TableElement>
                       <Tag />
                     </TableElement>
-                    <TableElement>{chef.role}</TableElement>
+
                     <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                       <a
                         href="#"
