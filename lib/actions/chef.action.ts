@@ -30,3 +30,15 @@ export async function getAllChefs() {
     throw err;
   }
 }
+
+export async function getChef(id: string) {
+  try {
+    connectToDB();
+
+    const chef: ChefType | null = await Chef.findById(id);
+
+    return chef;
+  } catch (err) {
+    console.log(err);
+  }
+}

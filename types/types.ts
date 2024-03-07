@@ -21,6 +21,14 @@ export interface ChefType {
   images: string[];
 }
 
+export interface ReviewType {
+  id: number;
+  review: string;
+  avatar: string;
+  name: string;
+  job: string;
+}
+
 // export interface ChefTypeCity extends ChefType {
 //   city: string;
 // }

@@ -1,11 +1,12 @@
 "use client";
 
-import { FaceSmileIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
-import { reviews, ReviewType } from "@/lib/data/data";
-import StyledText from "../ui/styled-text";
 import { useState } from "react";
+import { FaceSmileIcon } from "@heroicons/react/20/solid";
+import { reviews } from "@/lib/data/data";
+import { ReviewType } from "@/types/types";
 import Slider from "../ui/slider";
+import StyledText from "../ui/styled-text";
 
 function Story({
   className,

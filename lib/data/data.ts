@@ -1,10 +1,4 @@
-export interface ReviewType {
-  id: number;
-  review: string;
-  avatar: string;
-  name: string;
-  job: string;
-}
+import { ReviewType } from "@/types/types";
 
 export const reviews: ReviewType[] = [
   {
