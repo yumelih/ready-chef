@@ -48,16 +48,14 @@ export default function Showcase() {
   }
 
   return (
-    <section className="items-centeroverflow-hidden col-span-full flex flex-col sm:col-span-1 sm:col-start-2">
-      <div className=" text-center">
-        <h1 className="text-2xl font-bold tracking-wide">Showcase</h1>
-      </div>
+    <section className="col-span-full flex flex-col items-center overflow-hidden sm:col-span-1 sm:col-start-2">
+      <h1 className="text-2xl font-bold tracking-wide lg:self-start">
+        Showcase
+      </h1>
       <Slider
-        options={
-          {
-            // breakpoints: { "(max-width: 1024px)": { containScroll: false } },
-          }
-        }
+        options={{
+          breakpoints: { "(max-width: 640px)": { containScroll: false } },
+        }}
       >
         {Array.from([1, 2, 3, 4]).map((elm, i) => {
           return (

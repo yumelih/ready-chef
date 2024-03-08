@@ -1,6 +1,6 @@
 export default function AboutChef() {
   return (
-    <div className="flex flex-col gap-3">
+    <section className="flex flex-col gap-3">
       <h1 className="text-2xl font-bold">About Chef</h1>
       <p className="">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis
@@ -22,6 +22,6 @@ export default function AboutChef() {
         est faucibus id. Integer quis urna leo. Aliquam accumsan leo vel
         consequat dapibus.
       </p>
-    </div>
+    </section>
   );
 }
