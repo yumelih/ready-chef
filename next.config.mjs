@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    esmExternals: "loose", // <-- add this
+    serverComponentsExternalPackages: ["mongoose"], // <-- and this
+  },
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -16,7 +20,7 @@ const nextConfig = {
         hostname: "robohash.org",
       },
       {
-        protocol: "https",
+        protocol: "http",
         hostname: "dummyimage.com",
       },
     ],

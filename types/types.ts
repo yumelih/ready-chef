@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 export interface ChefType {
   _doc: any;
   name: string;
@@ -22,11 +24,16 @@ export interface ChefType {
 }
 
 export interface ReviewType {
-  id: number;
+  _id: mongoose.Types.ObjectId;
   review: string;
-  avatar: string;
-  name: string;
-  job: string;
+  rating: string;
+  user: mongoose.Types.ObjectId;
+  chef: mongoose.Types.ObjectId;
+  madeAt: Date;
+}
+
+export interface PopulatedChefType extends ChefType {
+  reviews: ReviewType[];
 }
 
 // export interface ChefTypeCity extends ChefType {

@@ -18,16 +18,16 @@ const UserSchema = new Schema({
         `${props.value} is not a valid email!`,
     },
   },
-  photo: String,
+  profilePhoto: String,
   phoneNumber: {
     type: String,
-    validate: {
-      validator: function (val: string) {
-        return isMobilePhone(val);
-      },
-      message: (props: { value: string }) =>
-        `${props.value} is not a valid phone number!`,
-    },
+    // validate: {
+    //   validator: function (val: string) {
+    //     return isMobilePhone(val);
+    //   },
+    //   message: (props: { value: string }) =>
+    //     `${props.value} is not a valid phone number!`,
+    // },
   },
   password: {
     type: String,
@@ -61,3 +61,4 @@ const UserSchema = new Schema({
 });
 
 const User = models.User || model("User", UserSchema);
+export default User;

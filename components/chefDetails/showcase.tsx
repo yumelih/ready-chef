@@ -4,13 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import Slider from "../ui/slider";
 
-function Story({
-  className,
-  data,
-}: {
-  className?: string;
-  data: { images: string[]; index: number };
-}) {
+function Story({ className, image }: { className?: string; image: string }) {
   return (
     <div
       className={
@@ -21,7 +15,7 @@ function Story({
       <div className="flex h-full w-full flex-col items-center gap-4 bg-gray-200 p-4 shadow-md">
         <div className="relative h-full w-full">
           <Image
-            src={`/static/images/chef-details-images/showcase-food${data.index + 1}.jpg`}
+            src={image}
             fill={true}
             // style={{ objectFit: "contain" }}
             alt="Food"
@@ -40,7 +34,7 @@ function Story({
   );
 }
 
-export default function Showcase() {
+export default function Showcase({ images }: { images: string[] }) {
   const [currentPost, setCurrentPost] = useState<number>(0);
 
   function handleClick(num: number): void {
@@ -57,10 +51,10 @@ export default function Showcase() {
           breakpoints: { "(max-width: 640px)": { containScroll: false } },
         }}
       >
-        {Array.from([1, 2, 3, 4]).map((elm, i) => {
+        {Array.from({ length: images.length }).map((elm, i) => {
           return (
             <div key={i} className="flex-[0_0_50%] lg:flex-[0_0_40%]">
-              <Story key={i} className="" data={{ images: [], index: i }} />
+              <Story key={i} className="" image={images[i]} />
             </div>
           );
         })}

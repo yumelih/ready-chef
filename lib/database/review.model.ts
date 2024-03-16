@@ -9,7 +9,7 @@ export interface ReviewType extends Document {
   madeAt: Date;
 }
 
-const ReviewSchema = new Schema(
+const reviewSchema = new Schema(
   {
     review: {
       type: String,
@@ -40,4 +40,15 @@ const ReviewSchema = new Schema(
   },
 );
 
-const Review = models.Review || model("Review", ReviewSchema);
+reviewSchema.pre<ReviewType>(/^find/, function (next) {
+  this.populate({
+    path: "user",
+    select: "name photo",
+  });
+
+  next();
+});
+
+const Review = models.Review || model("Review", reviewSchema);
+
+export default Review;

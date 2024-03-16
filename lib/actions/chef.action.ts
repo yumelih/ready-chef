@@ -1,44 +1,32 @@
+import "@/lib/database/review.model"; // Import review.model first
+import "@/lib/database/user.model"; // Import chef.model after
 import { connectToDB } from "../database/mongoose";
 import Chef from "@/lib/database/chef.model";
-import { getLocation } from "../utils/reverseGeocoding";
-import { ChefType } from "@/types/types";
+import { ChefType, PopulatedChefType } from "@/types/types";
 
 export async function getAllChefs() {
   try {
-    connectToDB();
+    await connectToDB(); // Ensure database connection
 
     let chefs: ChefType[] = await Chef.find();
 
-    // let newChefsPromises = chefs.map(async (chef) => {
-    //   const city = await getLocation(
-    //     chef.chefLocation.coordinates[0],
-    //     chef.chefLocation.coordinates[1],
-    //   );
-    //   return {
-    //     ...chef,
-    //     _doc: {
-    //       ...chef._doc,
-    //       city,
-    //     },
-    //   };
-    // });
-
-    // const newChefs = await Promise.all(newChefsPromises);
-
     return chefs;
   } catch (err) {
-    throw err;
+    throw err; // Consider throwing the error for better error handling
   }
 }
 
 export async function getChef(id: string) {
   try {
-    connectToDB();
+    await connectToDB(); // Ensure database connection
 
-    const chef: ChefType | null = await Chef.findById(id);
+    const chef = (await Chef.findById(id).populate(
+      "reviews",
+    )) as PopulatedChefType | null;
 
     return chef;
   } catch (err) {
     console.log(err);
+    throw err; // Consider throwing the error for better error handling
   }
 }
